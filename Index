@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map Directory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Map Directory</h1>
+<p class="intro">A directory of historical maps, organized by region, country, and century.</p>
+
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<div id="content"></div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="modalTitle"></h2>
+      <a class="modal-close" id="modalClose">Close</a>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+
+<!-- One line per country. Add a new one here whenever you add a country folder. -->
+<script src="France/data.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
