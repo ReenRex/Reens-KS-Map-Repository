@@ -123,6 +123,8 @@ function openTutorial(title, tutorialRaw){
   }
 
   steps.forEach(step => {
+    if(!step.src && !step.caption) return; // nothing added for this step yet
+
     const stepDiv = document.createElement('div');
     stepDiv.className = 'tutorial-step';
 
@@ -131,11 +133,6 @@ function openTutorial(title, tutorialRaw){
       img.src = step.src;
       img.alt = step.caption;
       stepDiv.appendChild(img);
-    } else {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'screenshot-placeholder';
-      placeholder.textContent = 'Screenshot not added yet';
-      stepDiv.appendChild(placeholder);
     }
 
     if(step.caption){
