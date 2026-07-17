@@ -154,13 +154,44 @@ function openTutorial(title, tutorialRaw){
   modalOverlay.classList.add('open');
 }
 
-function openNotes(title, notesText){
+function openNotes(title, notes){
   modalTitle.textContent = title + ' — Notes';
   modalBody.innerHTML = '';
 
-  const notesEl = document.createElement('p');
-  notesEl.textContent = notesText;
-  modalBody.appendChild(notesEl);
+  // notes can be a plain string, or an array of sections:
+  // { heading: "...", body: "...", email: "..." (optional) }
+  const sections = Array.isArray(notes) ? notes : [{ body: notes }];
+
+  sections.forEach(section => {
+    const sectionDiv = document.createElement('div');
+    sectionDiv.className = 'notes-section';
+
+    if(section.heading){
+      const headingEl = document.createElement('p');
+      const strongEl = document.createElement('strong');
+      strongEl.textContent = section.heading;
+      headingEl.appendChild(strongEl);
+      sectionDiv.appendChild(headingEl);
+    }
+
+    if(section.body){
+      const bodyEl = document.createElement('p');
+      bodyEl.textContent = section.body;
+      sectionDiv.appendChild(bodyEl);
+    }
+
+    if(section.email){
+      const emailEl = document.createElement('p');
+      emailEl.textContent = 'E-mail Address: ';
+      const emailLink = document.createElement('a');
+      emailLink.href = 'mailto:' + section.email;
+      emailLink.textContent = section.email;
+      emailEl.appendChild(emailLink);
+      sectionDiv.appendChild(emailEl);
+    }
+
+    modalBody.appendChild(sectionDiv);
+  });
 
   modalOverlay.classList.add('open');
 }
