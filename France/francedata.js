@@ -14,11 +14,15 @@
          the screenshots (use this if that download needs a
          heads-up before the steps, like where to scroll to)
 
-   A link can also have a plain "notes" field — just a string.
-   If present, a "(Notes)" link appears next to the title and
-   opens a popup showing that text (no screenshots involved).
-   Useful for things like "this source can't be downloaded
-   directly, here's what to do instead."
+   A link can also have a "notes" field for a popup with no
+   screenshots. Two ways to write it:
+     notes: "just a plain string"
+       — one simple block of text
+     notes: [ { heading: "...", body: "...", email: "..." }, ... ]
+       — one or more bold headings, each with its own text.
+         "email" is optional — adds a mailto link under that
+         section if given.
+   Either way, a "(Notes)" link appears next to the title.
    ============================================================ */
 data.Europe = data.Europe || {};
 
@@ -27,9 +31,9 @@ data.Europe.France = {
   "19th Century": [],
   "20th Century": [
     {
-      title: "Normandy 1:25k Map Sheets",
+      title: "Normandy 1:25k Maps",
       url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
-      notes: "These sheets cannot be downloaded and must be stitched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+      notes: "These images cannot be downloaded and must be stiched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
     {
       title: "France 1:50,000 1950s Map",
@@ -42,6 +46,25 @@ data.Europe.France = {
           { caption: "", src: "" }
         ]
       }
+    },
+    {
+      title: "Normandy 1:50k Map Sheets",
+      url: "https://www.normandywarguide.com/articles/gsgs-4250-map-series",
+      notes: [
+        {
+          heading: "USNA Sheets",
+          body: 'These sheets can be downloaded easily by clicking the "Download" button in the corner when accessing the sheets.'
+        },
+        {
+          heading: "NWG Sheets",
+          body: "These sheets cannot be downloaded and must be stitched together via taking several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+        },
+        {
+          heading: "CGNL",
+          body: "These sheets cannot be downloaded or feasibly stitched. The owners suggest contacting them in order to download.",
+          email: "info@collectiegelderland.nl"
+        }
+      ]
     }
   ]
 };
