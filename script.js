@@ -53,7 +53,7 @@ function render(){
 
   if(path.length < 3){
     // still navigating continent -> country -> century
-    const keys = Object.keys(level);
+    const keys = Object.keys(level).sort();
     if(keys.length === 0){
       const emptyMsg = document.createElement('p');
       emptyMsg.textContent = 'Nothing listed here yet.';
