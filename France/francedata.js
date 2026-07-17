@@ -36,7 +36,7 @@ data.Europe.France = {
       notes: "These sheets cannot be downloaded and must be stitched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
     {
-      title: "France 1:50,000 (1950) ",
+      title: "France 1:50k (1950)",
       url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-50-HISTO",
       tutorial: {
         intro: 'Scroll down until you see "Resources and Links"',
