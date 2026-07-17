@@ -27,7 +27,7 @@ data.Europe.France = {
   "19th Century": [],
   "20th Century": [
     {
-      title: "Normandy 1:25k Maps",
+      title: "Normandy 1:25k Map Sheets",
       url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
       notes: "These images cannot be downloaded and must be stitched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
