@@ -31,12 +31,12 @@ data.Europe.France = {
   "19th Century": [],
   "20th Century": [
     {
-      title: "Normandy 1:25k Maps (1943)",
+      title: "Normandy 1:25k Maps",
       url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
-      notes: "These sheets cannot be downloaded and must be stitched together via taking several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+      notes: "These images cannot be downloaded and must be stiched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
     {
-      title: "France 1:50k Survey Map (1950)",
+      title: "France 1:50,000 1950s Map",
       url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-50-HISTO",
       tutorial: {
         intro: 'Scroll down until you see "Resources and Links"',
@@ -48,12 +48,12 @@ data.Europe.France = {
       }
     },
     {
-      title: "Normandy 1:50k (1943)",
+      title: "Normandy 1:50k Map Sheets",
       url: "https://www.normandywarguide.com/articles/gsgs-4250-map-series",
       notes: [
         {
           heading: "USNA Sheets",
-          body: 'These sheets can be downloaded easily by clicking the "Download" button in the bottom left corner when accessing the sheets.'
+          body: 'These sheets can be downloaded easily by clicking the "Download" button in the corner when accessing the sheets.'
         },
         {
           heading: "NWG Sheets",
@@ -65,6 +65,10 @@ data.Europe.France = {
           email: "info@collectiegelderland.nl"
         }
       ]
+    },
+    {
+      title: "North-East France 1:50k (1943)",
+      url: "https://maps.lib.utexas.edu/maps/ams/france_and_belgium/"
     }
   ]
 };
