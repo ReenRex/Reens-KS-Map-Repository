@@ -85,19 +85,10 @@ hr{
 .tutorial-intro{
   margin: 0 0 20px;
   font-size: 15px;
-  font-style: italic;
 }
 .tutorial-step p{
   margin: 6px 0 0;
   font-size: 15px;
-}
-.screenshot-placeholder{
-  border: 1px dashed #666;
-  background: #f2f2f2;
-  color: #666;
-  text-align: center;
-  padding: 40px 10px;
-  font-size: 14px;
 }
 .tutorial-step img{
   max-width: 100%;
