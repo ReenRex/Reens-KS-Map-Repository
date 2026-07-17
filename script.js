@@ -1,164 +1,106 @@
-// This file handles page behavior — you shouldn't need to edit it.
-// To add or change map entries, edit data.js instead.
-
-let path = []; // e.g. ["Europe", "France", "20th Century"]
-
-function goTo(newPath){
-  path = newPath;
-  render();
+body{
+  font-family: "Times New Roman", Times, serif;
+  background: #ffffff;
+  color: #000000;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-size: 17px;
+  line-height: 1.6;
 }
-
-// A tutorial can be written two ways in a country's data.js:
-//   tutorial: [ {caption, src}, ... ]                      — no intro note
-//   tutorial: { intro: "...", steps: [ {caption, src}, ... ] } — with an intro note
-// This makes both work the same way everywhere else in the code.
-function normalizeTutorial(tutorial){
-  if(Array.isArray(tutorial)){
-    return { intro: '', steps: tutorial };
-  }
-  return { intro: tutorial.intro || '', steps: tutorial.steps || [] };
+h1{
+  font-size: 26px;
+  margin-bottom: 4px;
 }
-
-function render(){
-  const contentEl = document.getElementById('content');
-  const crumbEl = document.getElementById('breadcrumb');
-
-  // Breadcrumb
-  crumbEl.innerHTML = '';
-  const homeLink = document.createElement('a');
-  homeLink.textContent = 'Home';
-  homeLink.addEventListener('click', () => goTo([]));
-  crumbEl.appendChild(homeLink);
-
-  path.forEach((p, i) => {
-    crumbEl.appendChild(document.createTextNode(' > '));
-    if(i === path.length - 1){
-      crumbEl.appendChild(document.createTextNode(p));
-    } else {
-      const crumbLink = document.createElement('a');
-      crumbLink.textContent = p;
-      const targetPath = path.slice(0, i + 1);
-      crumbLink.addEventListener('click', () => goTo(targetPath));
-      crumbEl.appendChild(crumbLink);
-    }
-  });
-
-  // Walk to current level in data
-  let level = data;
-  for(const p of path){
-    level = level[p];
-  }
-
-  contentEl.innerHTML = '';
-
-  if(path.length < 3){
-    // still navigating continent -> country -> century
-    const keys = Object.keys(level);
-    if(keys.length === 0){
-      const emptyMsg = document.createElement('p');
-      emptyMsg.textContent = 'Nothing listed here yet.';
-      contentEl.appendChild(emptyMsg);
-    } else {
-      const ul = document.createElement('ul');
-      keys.forEach(k => {
-        const li = document.createElement('li');
-        const link = document.createElement('a');
-        link.textContent = k;
-        const targetPath = [...path, k];
-        link.addEventListener('click', () => goTo(targetPath));
-        li.appendChild(link);
-        ul.appendChild(li);
-      });
-      contentEl.appendChild(ul);
-    }
-  } else {
-    // path.length === 3, level is an array of links
-    if(level.length === 0){
-      const emptyMsg = document.createElement('p');
-      emptyMsg.textContent = 'No links added yet for this century.';
-      contentEl.appendChild(emptyMsg);
-    } else {
-      const ul = document.createElement('ul');
-      level.forEach(linkData => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = linkData.url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = linkData.title;
-        li.appendChild(a);
-
-        if(linkData.tutorial && normalizeTutorial(linkData.tutorial).steps.length > 0){
-          const tutorialLink = document.createElement('a');
-          tutorialLink.textContent = '(Download Tutorial)';
-          tutorialLink.className = 'tutorial-link';
-          tutorialLink.addEventListener('click', () => openTutorial(linkData.title, linkData.tutorial));
-          li.appendChild(tutorialLink);
-        }
-
-        ul.appendChild(li);
-      });
-      contentEl.appendChild(ul);
-    }
-  }
+p.intro{
+  margin-top: 0;
+  margin-bottom: 20px;
 }
-
-// ---- Tutorial modal ----
-const modalOverlay = document.getElementById('modalOverlay');
-const modalTitle = document.getElementById('modalTitle');
-const modalBody = document.getElementById('modalBody');
-const modalClose = document.getElementById('modalClose');
-
-function openTutorial(title, tutorialRaw){
-  const { intro, steps } = normalizeTutorial(tutorialRaw);
-
-  modalTitle.textContent = title + ' — Download Tutorial';
-  modalBody.innerHTML = '';
-
-  if(intro){
-    const introEl = document.createElement('p');
-    introEl.className = 'tutorial-intro';
-    introEl.textContent = intro;
-    modalBody.appendChild(introEl);
-  }
-
-  steps.forEach(step => {
-    const stepDiv = document.createElement('div');
-    stepDiv.className = 'tutorial-step';
-
-    if(step.src){
-      const img = document.createElement('img');
-      img.src = step.src;
-      img.alt = step.caption;
-      stepDiv.appendChild(img);
-    } else {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'screenshot-placeholder';
-      placeholder.textContent = 'Screenshot not added yet';
-      stepDiv.appendChild(placeholder);
-    }
-
-    if(step.caption){
-      const caption = document.createElement('p');
-      caption.textContent = step.caption;
-      stepDiv.appendChild(caption);
-    }
-
-    modalBody.appendChild(stepDiv);
-  });
-  modalOverlay.classList.add('open');
+.breadcrumb{
+  margin-bottom: 20px;
+  font-size: 15px;
 }
-
-function closeModal(){
-  modalOverlay.classList.remove('open');
+.breadcrumb a{
+  color: #0000EE;
+  text-decoration: underline;
 }
-
-modalClose.addEventListener('click', closeModal);
-modalOverlay.addEventListener('click', (e) => {
-  if(e.target === modalOverlay) closeModal();
-});
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape') closeModal();
-});
-
-render();
+ul{
+  list-style-type: disc;
+  padding-left: 25px;
+}
+li{
+  margin-bottom: 8px;
+}
+a{
+  color: #0000EE;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:visited{
+  color: #551A8B;
+}
+hr{
+  margin: 25px 0;
+}
+.tutorial-link{
+  font-size: 15px;
+  margin-left: 10px;
+}
+.modal-overlay{
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 100;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+.modal-overlay.open{
+  display: flex;
+}
+.modal-box{
+  background: #ffffff;
+  border: 1px solid #000000;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+}
+.modal-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+.modal-header h2{
+  font-size: 20px;
+  margin: 0;
+}
+.modal-close{
+  font-size: 15px;
+}
+.tutorial-intro{
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-style: italic;
+}
+.tutorial-step p{
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+.screenshot-placeholder{
+  border: 1px dashed #666;
+  background: #f2f2f2;
+  color: #666;
+  text-align: center;
+  padding: 40px 10px;
+  font-size: 14px;
+}
+.tutorial-step img{
+  max-width: 100%;
+  border: 1px solid #000000;
+  display: block;
+}
