@@ -96,6 +96,14 @@ function render(){
           li.appendChild(tutorialLink);
         }
 
+        if(linkData.notes){
+          const notesLink = document.createElement('a');
+          notesLink.textContent = '(Notes)';
+          notesLink.className = 'tutorial-link';
+          notesLink.addEventListener('click', () => openNotes(linkData.title, linkData.notes));
+          li.appendChild(notesLink);
+        }
+
         ul.appendChild(li);
       });
       contentEl.appendChild(ul);
@@ -143,6 +151,17 @@ function openTutorial(title, tutorialRaw){
 
     modalBody.appendChild(stepDiv);
   });
+  modalOverlay.classList.add('open');
+}
+
+function openNotes(title, notesText){
+  modalTitle.textContent = title + ' — Notes';
+  modalBody.innerHTML = '';
+
+  const notesEl = document.createElement('p');
+  notesEl.textContent = notesText;
+  modalBody.appendChild(notesEl);
+
   modalOverlay.classList.add('open');
 }
 
