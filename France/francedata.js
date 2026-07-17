@@ -26,10 +26,9 @@ data.Europe.France = {
       tutorial: {
         intro: 'Scroll down until you see "Resources and Links"',
         steps: [
-           { caption: "Scroll down until you see Resources and Links.", src: "" }
           { caption: "", src: "France/images/step1.png" },
           { caption: "", src: "France/images/step2.png" },
-          
+          { caption: "", src: "" }
         ]
       }
     }
