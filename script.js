@@ -8,6 +8,17 @@ function goTo(newPath){
   render();
 }
 
+// A tutorial can be written two ways in a country's data.js:
+//   tutorial: [ {caption, src}, ... ]                      — no intro note
+//   tutorial: { intro: "...", steps: [ {caption, src}, ... ] } — with an intro note
+// This makes both work the same way everywhere else in the code.
+function normalizeTutorial(tutorial){
+  if(Array.isArray(tutorial)){
+    return { intro: '', steps: tutorial };
+  }
+  return { intro: tutorial.intro || '', steps: tutorial.steps || [] };
+}
+
 function render(){
   const contentEl = document.getElementById('content');
   const crumbEl = document.getElementById('breadcrumb');
@@ -77,7 +88,7 @@ function render(){
         a.textContent = linkData.title;
         li.appendChild(a);
 
-        if(linkData.tutorial && linkData.tutorial.length > 0){
+        if(linkData.tutorial && normalizeTutorial(linkData.tutorial).steps.length > 0){
           const tutorialLink = document.createElement('a');
           tutorialLink.textContent = '(Download Tutorial)';
           tutorialLink.className = 'tutorial-link';
@@ -98,9 +109,19 @@ const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
 
-function openTutorial(title, steps){
+function openTutorial(title, tutorialRaw){
+  const { intro, steps } = normalizeTutorial(tutorialRaw);
+
   modalTitle.textContent = title + ' — Download Tutorial';
   modalBody.innerHTML = '';
+
+  if(intro){
+    const introEl = document.createElement('p');
+    introEl.className = 'tutorial-intro';
+    introEl.textContent = intro;
+    modalBody.appendChild(introEl);
+  }
+
   steps.forEach(step => {
     const stepDiv = document.createElement('div');
     stepDiv.className = 'tutorial-step';
