@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map Directory</title>
+<style>
+  body{
+    font-family: "Times New Roman", Times, serif;
+    background: #ffffff;
+    color: #000000;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  h1{
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  p.intro{
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .breadcrumb{
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .breadcrumb a{
+    color: #0000EE;
+    text-decoration: underline;
+  }
+  ul{
+    list-style-type: disc;
+    padding-left: 25px;
+  }
+  li{
+    margin-bottom: 8px;
+  }
+  a{
+    color: #0000EE;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  a:visited{
+    color: #551A8B;
+  }
+  hr{
+    margin: 25px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Map Directory</h1>
+<p class="intro">A directory of historical maps, organized by region, country, and century.</p>
+
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<div id="content"></div>
+
+<script>
+  /* ============================================================
+     EDIT THIS DATA to add continents, countries, centuries, and links.
+
+     Structure:
+     continent -> country -> century -> list of links
+     each link needs: title, url
+     ============================================================ */
+  const data = {
+    "Europe": {
+      "France": {
+        "18th Century": [],
+        "19th Century": [],
+        "20th Century": [
+          {
+            title: "IGN SCAN 50 Histo",
+            url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-50-HISTO"
+          }
+        ]
+      }
+    }
+  };
+  /* ============================================================ */
+
+  let path = []; // e.g. ["Europe", "France", "20th Century"]
+
+  function render(){
+    const contentEl = document.getElementById('content');
+    const crumbEl = document.getElementById('breadcrumb');
+
+    // Breadcrumb
+    let crumbHtml = '<a onclick="goTo([])">Home</a>';
+    path.forEach((p, i) => {
+      crumbHtml += ' &gt; ';
+      if(i === path.length - 1){
+        crumbHtml += p;
+      } else {
+        crumbHtml += `<a onclick="goTo(${JSON.stringify(path.slice(0, i+1))})">${p}</a>`;
+      }
+    });
+    crumbEl.innerHTML = path.length ? crumbHtml : '';
+
+    // Walk to current level in data
+    let level = data;
+    for(const p of path){
+      level = level[p];
+    }
+
+    let html = '';
+
+    if(path.length < 3){
+      // still navigating continent -> country -> century
+      const keys = Object.keys(level);
+      if(keys.length === 0){
+        html = '<p>Nothing listed here yet.</p>';
+      } else {
+        html = '<ul>';
+        keys.forEach(k => {
+          html += `<li><a onclick="goTo(${JSON.stringify([...path, k])})">${k}</a></li>`;
+        });
+        html += '</ul>';
+      }
+    } else {
+      // path.length === 3, level is an array of links
+      if(level.length === 0){
+        html = '<p>No links added yet for this century.</p>';
+      } else {
+        html = '<ul>';
+        level.forEach(link => {
+          html += `<li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.title}</a></li>`;
+        });
+        html += '</ul>';
+      }
+    }
+
+    contentEl.innerHTML = html;
+  }
+
+  function goTo(newPath){
+    path = newPath;
+    render();
+  }
+
+  render();
+</script>
+
+</body>
+</html>
