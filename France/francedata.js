@@ -53,7 +53,7 @@ data.Europe.France = {
       notes: [
         {
           heading: "USNA Sheets",
-          body: 'These sheets can be downloaded easily by clicking the "Download" button in the corner when accessing the sheets.'
+          body: 'These sheets can be downloaded easily by clicking the "Download" button in the bottom left corner when accessing the sheets.'
         },
         {
           heading: "NWG Sheets",
