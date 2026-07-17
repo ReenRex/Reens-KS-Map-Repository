@@ -95,3 +95,12 @@ hr{
   border: 1px solid #000000;
   display: block;
 }
+.notes-section{
+  margin-bottom: 18px;
+}
+.notes-section p{
+  margin: 4px 0 0;
+}
+.notes-section p:first-child{
+  margin-top: 0;
+}
