@@ -82,8 +82,10 @@ hr{
 .modal-close{
   font-size: 15px;
 }
-.tutorial-step{
-  margin-bottom: 20px;
+.tutorial-intro{
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-style: italic;
 }
 .tutorial-step p{
   margin: 6px 0 0;
