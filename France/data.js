@@ -16,9 +16,10 @@ data.Europe.France = {
       title: "France 1:50,000 1950s Map",
       url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-50-HISTO",
       tutorial: [
+         { caption: "", src: "Scroll down until you find "Resources and Links" }
         { caption: "", src: "France/images/step1.png" },
         { caption: "", src: "France/images/step2.png" },
-    
+      
       ]
     }
   ]
