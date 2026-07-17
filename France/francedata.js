@@ -33,7 +33,7 @@ data.Europe.France = {
     {
       title: "Normandy 1:25k Maps",
       url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
-      notes: "These images cannot be downloaded and must be stiched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+      notes: "These sheets cannot be downloaded and must be stiched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
     {
       title: "France 1:50,000 1950s Map",
