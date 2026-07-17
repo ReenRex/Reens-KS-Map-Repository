@@ -86,21 +86,34 @@
 
   let path = []; // e.g. ["Europe", "France", "20th Century"]
 
+  function goTo(newPath){
+    path = newPath;
+    render();
+  }
+
   function render(){
     const contentEl = document.getElementById('content');
     const crumbEl = document.getElementById('breadcrumb');
 
     // Breadcrumb
-    let crumbHtml = '<a onclick="goTo([])">Home</a>';
+    crumbEl.innerHTML = '';
+    const homeLink = document.createElement('a');
+    homeLink.textContent = 'Home';
+    homeLink.addEventListener('click', () => goTo([]));
+    crumbEl.appendChild(homeLink);
+
     path.forEach((p, i) => {
-      crumbHtml += ' &gt; ';
+      crumbEl.appendChild(document.createTextNode(' > '));
       if(i === path.length - 1){
-        crumbHtml += p;
+        crumbEl.appendChild(document.createTextNode(p));
       } else {
-        crumbHtml += `<a onclick="goTo(${JSON.stringify(path.slice(0, i+1))})">${p}</a>`;
+        const crumbLink = document.createElement('a');
+        crumbLink.textContent = p;
+        const targetPath = path.slice(0, i + 1);
+        crumbLink.addEventListener('click', () => goTo(targetPath));
+        crumbEl.appendChild(crumbLink);
       }
     });
-    crumbEl.innerHTML = path.length ? crumbHtml : '';
 
     // Walk to current level in data
     let level = data;
@@ -108,39 +121,49 @@
       level = level[p];
     }
 
-    let html = '';
+    contentEl.innerHTML = '';
 
     if(path.length < 3){
       // still navigating continent -> country -> century
       const keys = Object.keys(level);
       if(keys.length === 0){
-        html = '<p>Nothing listed here yet.</p>';
+        const emptyMsg = document.createElement('p');
+        emptyMsg.textContent = 'Nothing listed here yet.';
+        contentEl.appendChild(emptyMsg);
       } else {
-        html = '<ul>';
+        const ul = document.createElement('ul');
         keys.forEach(k => {
-          html += `<li><a onclick="goTo(${JSON.stringify([...path, k])})">${k}</a></li>`;
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.textContent = k;
+          const targetPath = [...path, k];
+          link.addEventListener('click', () => goTo(targetPath));
+          li.appendChild(link);
+          ul.appendChild(li);
         });
-        html += '</ul>';
+        contentEl.appendChild(ul);
       }
     } else {
       // path.length === 3, level is an array of links
       if(level.length === 0){
-        html = '<p>No links added yet for this century.</p>';
+        const emptyMsg = document.createElement('p');
+        emptyMsg.textContent = 'No links added yet for this century.';
+        contentEl.appendChild(emptyMsg);
       } else {
-        html = '<ul>';
-        level.forEach(link => {
-          html += `<li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.title}</a></li>`;
+        const ul = document.createElement('ul');
+        level.forEach(linkData => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = linkData.url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = linkData.title;
+          li.appendChild(a);
+          ul.appendChild(li);
         });
-        html += '</ul>';
+        contentEl.appendChild(ul);
       }
     }
-
-    contentEl.innerHTML = html;
-  }
-
-  function goTo(newPath){
-    path = newPath;
-    render();
   }
 
   render();
