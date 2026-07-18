@@ -48,6 +48,11 @@ data.Europe.France = {
       indexUrl: "https://digicoll.lib.berkeley.edu/record/205803?v=uv#?xywh=-201%2C-89%2C2501%2C2032&cv="
     },
     {
+      title: "France 1:50k (1943)",
+      url: "https://digicoll.lib.berkeley.edu/record/112502?ln=en&v=uv#?xywh=-174%2C0%2C9209%2C6237&cv=",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/104702?ln=en&v=uv#?xywh=-367%2C-680%2C13408%2C7612"
+    },
+    {
       title: "Normandy 1:50k Map Sheets (1943)",
       url: "https://www.normandywarguide.com/articles/gsgs-4250-map-series",
       notes: [
