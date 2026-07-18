@@ -13,7 +13,7 @@ data.Europe.Italy = {
       url: "https://archiviocartografico.regione.campania.it/ua/fascrc-imm/?page=1",
       notes: [
         {
-          body: "These images are borderline usable. Below I have attached a screenshot of their use in TableTop Sim with some Ottovski WW2 Pieces for reference.",
+          body: "These images are borderline usable. Below I have attached a screenshot of their use in TableTop Sim with some Ottovski WW2 pieces for reference.",
           image: "Italy/images/tabletop-example.png"
         }
       ]
