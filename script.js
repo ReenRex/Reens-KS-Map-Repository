@@ -170,7 +170,7 @@ function openNotes(title, notes){
   modalBody.innerHTML = '';
 
   // notes can be a plain string, or an array of sections:
-  // { heading: "...", body: "...", email: "..." (optional) }
+  // { heading: "...", body: "...", image: "...", email: "..." (all optional except body/heading) }
   const sections = Array.isArray(notes) ? notes : [{ body: notes }];
 
   sections.forEach(section => {
@@ -189,6 +189,13 @@ function openNotes(title, notes){
       const bodyEl = document.createElement('p');
       bodyEl.textContent = section.body;
       sectionDiv.appendChild(bodyEl);
+    }
+
+    if(section.image){
+      const img = document.createElement('img');
+      img.src = section.image;
+      img.alt = section.heading || '';
+      sectionDiv.appendChild(img);
     }
 
     if(section.email){
