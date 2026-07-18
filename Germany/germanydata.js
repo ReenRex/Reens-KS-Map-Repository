@@ -16,13 +16,6 @@ data.Europe.Germany = {
         { body: "It should also be noted that included in the 1:10k category are many 1:100k maps. This seems to be a mistake of some sort so be careful when choosing a map. Read the scale before getting too excited." }
       ]
     },
-       {
-      title: "East Germany 1:25k (1970-80s)",
-      url: "https://ifl.wissensbank.com/esearcha/browse.tt.html",
-      notes: [
-        { body: "Unfortunately, I could not find an index for these sheets, so you will have to do your best to piece these together if you wish to use them. I will, however, continue the search for it." },
-     ]
-       },
      {
       title: "Germany 1:25k (1952)",
       url: "https://digicoll.lib.berkeley.edu/record/112517?ln=en&v=uv#?xywh=1825%2C2444%2C2341%2C1902&cv=2279",
@@ -31,6 +24,15 @@ data.Europe.Germany = {
     {
       title: "Germany 1:25k (1952) -- Alternative Database",
       url: "https://contentdm.lib.byu.edu/digital/collection/GermanyMaps/search"
-    }
+    },
+
+      {
+      title: "East Germany 1:25k (1970-80s)",
+      url: "https://ifl.wissensbank.com/esearcha/browse.tt.html",
+      notes: [
+        { body: "Unfortunately, I could not find an index for these sheets, so you will have to do your best to piece these together if you wish to use them. I will, however, continue the search for it." },
+     ]
+       },
+     
   ]
 };
