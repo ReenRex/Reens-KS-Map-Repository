@@ -32,7 +32,7 @@ data.Europe.Austria = {
         steps: [
           { caption: "", src: "Austria/images/step1.png" },
           { caption: "", src: "Austria/images/step2.png" },
-          { caption: "Fill out the request form with your details and submit. Depending on scan availability, you can get roughly 10-20 scan free of charge per quarter of the year.", src: "" }
+          { caption: "Fill out the request form with your details and submit. Depending on scan availability, you can get roughly 10-20 scans free of charge per quarter of the year.", src: "" }
         ]
       }
     }
