@@ -30,6 +30,10 @@ data.Europe.Italy = {
     {
       title: "Italy 1:50k (1941)",
       url: "https://maps.lib.utexas.edu/maps/ams/italy_50k/"
+    },
+    {
+      title: "Italy 1:100k (1941)",
+      url: "https://maps.lib.utexas.edu/maps/ams/italy_100k/"
     }
   ]
 };
