@@ -3,11 +3,12 @@
    See France/francedata.js for full instructions on adding
    tutorials and notes to an entry.
 
-   An entry can also have "links" instead of a single "url" —
-   use this when there's more than one labeled link (e.g. a
-   Main Link and an Index Link):
-     links: [ { label: "Main Link", url: "..." },
-              { label: "Index Link", url: "..." } ]
+   An entry can also have an "indexUrl" alongside its "url" —
+   use this when there's a separate index sheet for the same
+   map. The title becomes the link to "url" (the main map), and
+   an inline "[INDEX]" link appears right after it, pointing to
+   "indexUrl":
+     { title: "...", url: "main map link", indexUrl: "index link" }
    ============================================================ */
 data.Europe = data.Europe || {};
 
@@ -16,10 +17,8 @@ data.Europe.Austria = {
   "19th Century": [
     {
       title: "Austria-Hungary 1:75k (1876-1915)",
-      links: [
-        { label: "Main Link", url: "https://digitalcollections.nypl.org/collections/1fa2d5b0-c5ef-012f-fa0d-58d385a7bc34" },
-        { label: "Index Link", url: "https://www.loc.gov/resource/g6481a.ct011968/?r=0.449,0.185,0.542,0.326,0" }
-      ]
+      url: "https://digitalcollections.nypl.org/collections/1fa2d5b0-c5ef-012f-fa0d-58d385a7bc34",
+      indexUrl: "https://www.loc.gov/resource/g6481a.ct011968/?r=0.449,0.185,0.542,0.326,0"
     },
     {
       title: "Austria-Hungary 1:75k (1876-1915) -- ADDITIONAL SHEET",
@@ -38,32 +37,24 @@ data.Europe.Austria = {
   ],
   "20th Century": [
     {
-      title: "Austria 1:25k (1919-38) [INDEX]",
-      links: [
-        { label: "Main Link", url: "https://digicoll.lib.berkeley.edu/record/105644?ln=en&v=uv#?xywh=-3083%2C0%2C11658%2C7896&cv=" },
-        { label: "Index Link", url: "https://digicoll.lib.berkeley.edu/record/105505?ln=en&v=uv#?xywh=3814%2C1315%2C7933%2C4504" }
-      ]
+      title: "Austria 1:25k (1919-38)",
+      url: "https://digicoll.lib.berkeley.edu/record/105644?ln=en&v=uv#?xywh=-3083%2C0%2C11658%2C7896&cv=",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/105505?ln=en&v=uv#?xywh=3814%2C1315%2C7933%2C4504"
     },
     {
-      title: "Austria 1:25k (1938-44) [INDEX]",
-      links: [
-        { label: "Main Link", url: "https://digicoll.lib.berkeley.edu/record/264159?ln=en&v=uv#?xywh=-578%2C0%2C10890%2C7375&cv=" },
-        { label: "Index Link", url: "https://digicoll.lib.berkeley.edu/record/105500?ln=en&v=uv#?xywh=953%2C849%2C9410%2C5342" }
-      ]
+      title: "Austria 1:25k (1938-44)",
+      url: "https://digicoll.lib.berkeley.edu/record/264159?ln=en&v=uv#?xywh=-578%2C0%2C10890%2C7375&cv=",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/105500?ln=en&v=uv#?xywh=953%2C849%2C9410%2C5342"
     },
     {
-      title: "Austria 1:50k (1944) [INDEX]",
-      links: [
-        { label: "Main Link", url: "https://digicoll.lib.berkeley.edu/record/112505?ln=en&v=uv#?xywh=-5913%2C-2063%2C18577%2C12581" },
-        { label: "Index Link", url: "https://digicoll.lib.berkeley.edu/record/105178?ln=en&v=uv#?xywh=4410%2C4244%2C4504%2C2557" }
-      ]
+      title: "Austria 1:50k (1944)",
+      url: "https://digicoll.lib.berkeley.edu/record/112505?ln=en&v=uv#?xywh=-5913%2C-2063%2C18577%2C12581",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/105178?ln=en&v=uv#?xywh=4410%2C4244%2C4504%2C2557"
     },
     {
-      title: "Austria 1:75k (1935-44) [INDEX]",
-      links: [
-        { label: "Main Link", url: "https://digicoll.lib.berkeley.edu/record/105638?ln=en&v=uv#?xywh=-2750%2C-1497%2C13480%2C9129" },
-        { label: "Index Link", url: "https://digicoll.lib.berkeley.edu/record/105390?ln=en&v=uv#?xywh=0%2C-616%2C10031%2C8149&cv=" }
-      ]
+      title: "Austria 1:75k (1935-44)",
+      url: "https://digicoll.lib.berkeley.edu/record/105638?ln=en&v=uv#?xywh=-2750%2C-1497%2C13480%2C9129",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/105390?ln=en&v=uv#?xywh=0%2C-616%2C10031%2C8149&cv="
     }
   ]
 };
