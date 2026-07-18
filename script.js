@@ -81,12 +81,34 @@ function render(){
       const ul = document.createElement('ul');
       level.forEach(linkData => {
         const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = linkData.url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = linkData.title;
-        li.appendChild(a);
+
+        if(linkData.links && linkData.links.length > 0){
+          // multiple labeled links (e.g. "Main Link" / "Index Link")
+          const titleSpan = document.createElement('span');
+          titleSpan.textContent = linkData.title;
+          li.appendChild(titleSpan);
+
+          const subUl = document.createElement('ul');
+          linkData.links.forEach(sub => {
+            const subLi = document.createElement('li');
+            const subA = document.createElement('a');
+            subA.href = sub.url;
+            subA.target = '_blank';
+            subA.rel = 'noopener noreferrer';
+            subA.textContent = sub.label;
+            subLi.appendChild(subA);
+            subUl.appendChild(subLi);
+          });
+          li.appendChild(subUl);
+        } else {
+          // single link, title itself is the link
+          const a = document.createElement('a');
+          a.href = linkData.url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = linkData.title;
+          li.appendChild(a);
+        }
 
         if(linkData.tutorial && normalizeTutorial(linkData.tutorial).steps.length > 0){
           const tutorialLink = document.createElement('a');
