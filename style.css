@@ -104,3 +104,9 @@ hr{
 .notes-section p:first-child{
   margin-top: 0;
 }
+.notes-section img{
+  max-width: 100%;
+  border: 1px solid #000000;
+  display: block;
+  margin-top: 8px;
+}
