@@ -14,7 +14,7 @@ data.Europe.Italy = {
       notes: [
         {
           body: "These images are borderline usable. Below I have attached a screenshot of their use in TableTop Sim with some Ottovski WW2 Pieces for reference.",
-          image: "Italy/images/tabletop-example.png"
+          image: "Italy/images/tabletop-example (1).png"
         }
       ]
     },
