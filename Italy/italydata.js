@@ -9,6 +9,7 @@ data.Europe.Italy = {
   "18th Century": [],
   "19th Century": [],
   "20th Century": [
+    
      {
         title: "Italy 1:25k (1942)",
         url: "https://archiviocartografico.regione.campania.it/ua/fascrc-imm/?page=1"
@@ -23,7 +24,7 @@ data.Europe.Italy = {
      {
         title: "Italy 1:50k (1941)",
         url: "https://maps.lib.utexas.edu/maps/ams/italy_50k/"
-     }
+     },
      
   ]
 };
