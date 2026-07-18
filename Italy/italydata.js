@@ -23,6 +23,11 @@ data.Europe.Italy = {
       url: "https://maps.lib.utexas.edu/maps/ams/italy_25k/"
     },
     {
+      title: "Italy 1:25k (1943-45)",
+      url: "https://digicoll.lib.berkeley.edu/record/112504?ln=en&v=uv#?xywh=1966%2C3392%2C5138%2C4174",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/104934?ln=en&v=uv#?xywh=-1768%2C-506%2C14677%2C8333"
+    },
+    {
       title: "Italy 1:50k (1941)",
       url: "https://maps.lib.utexas.edu/maps/ams/italy_50k/"
     }
