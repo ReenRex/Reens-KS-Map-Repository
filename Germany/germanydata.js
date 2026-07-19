@@ -16,7 +16,7 @@ data.Europe.Germany = {
   "20th Century": [
     {
       title: "East Germany 1:10k (1970-80s)",
-      url: "https://ifl.wissensbank.com/esearcha/browse.tt.html",
+      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-110000-der-ddr",
       notes: [
     { body: "Unfortunately, the index of this collection doesn't seem to be available, however, you may be able to piece it together using the index found in the 1:25k section. Please read the 1:25k notes beforehand. You essentially just need to match up the map codes when using the 1:25k index to locate them." },
         { body: "It should also be noted that included in the 1:10k category are many 1:100k maps. This seems to be a mistake of some sort so be careful when choosing a map. Read the scale before getting too excited." },
