@@ -66,7 +66,7 @@ data.Europe.Germany = {
                  { body: "I have included the composite image and an index. To find specific sheets, just search their name and number on the David Rumsey site."}
                  ]
 
-     }
+     },
      
     {
         title: "German Empire Maps (Includes Composite 1:100k Map of the German Empire) (1900s)",
