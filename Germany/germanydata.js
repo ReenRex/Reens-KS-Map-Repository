@@ -58,6 +58,12 @@ data.Europe.Germany = {
          { body: "Also, for some reason, the 1:50k GDR maps don't have their own page, so I have to just show you the main page and you find it from there." },
            ]
      },
+    {
+        title: "German Empire Maps (Includes 1:100k Map of the German Empire) (1900s)",
+           url: "https://kartenforum.slub-dresden.de/",
+     }
+
+     
      {
         title: "East Germany 1:100k (1970s-80s)",
         url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung",
