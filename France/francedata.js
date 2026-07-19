@@ -1,88 +1,95 @@
 /* ============================================================
-   GERMANY — edit this file to add or change Germany's maps.
-   See France/francedata.js for full instructions on adding
-   tutorials and notes to an entry.
+   FRANCE — edit this file to add or change France's maps.
+   Keep screenshots for France's tutorials inside this folder's
+   "images" subfolder, and reference them here as:
+     "France/images/your-file-name.png"
+   Leave src as "" to show a placeholder box instead.
+   A "tutorial" can be written two ways:
+     tutorial: [ {caption, src}, ... ]
+       — just the screenshots, no intro note
+     tutorial: { intro: "some note", steps: [ {caption, src}, ... ] }
+       — adds a line of text at the top of the popup, above
+         the screenshots (use this if that download needs a
+         heads-up before the steps, like where to scroll to)
+   A link can also have a "notes" field for a popup with no
+   screenshots. Two ways to write it:
+     notes: "just a plain string"
+       — one simple block of text
+     notes: [ { heading: "...", body: "...", email: "..." }, ... ]
+       — one or more bold headings, each with its own text.
+         "email" is optional — adds a mailto link under that
+         section if given.
+   Either way, a "(Notes)" link appears next to the title.
+
+   An entry can also have an "indexUrl" alongside its "url" —
+   use this when there's a separate index sheet for the same
+   map. The title becomes the link to "url" (the main map), and
+   an inline "[INDEX]" link appears right after it, pointing to
+   "indexUrl":
+     { title: "...", url: "main map link", indexUrl: "index link" }
    ============================================================ */
 data.Europe = data.Europe || {};
-data.Europe.Germany = {
+data.Europe.France = {
   "18th Century": [],
-  "19th Century": [
-    {
-      title: "Bavaria 1:25k (1880s-1940s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-bayern-125-000"
-    },
-    {
-      title: "Bavaria 1:50k (1812-1867)",
-      url: "https://www.bavarikon.de/search?collectionid=bav:BSB-CMS-0000000000002414&lang=de",
-      notes: [
-        { body: "Unfortunately, I cannot see an obvious way to download these sheets, meaning they must be stitched via several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be." }
-      ]
-    },
-    {
-      title: "Bavaria 1:100k (1801-06)",
-      url: "https://www.digitale-sammlungen.de/en/view/bsb00010747?page=,1"
-    }
-  ],
+  "19th Century": [],
   "20th Century": [
     {
-      title: "East Germany 1:10k (1970-80s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-110000-der-ddr",
+      title: "Normandy 1:25k Map Sheets (1943)",
+      url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
+      notes: "These sheets cannot be downloaded and must be stitched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+    },
+    {
+      title: "Corsica 1:50k (1943)",
+      url: "https://maps.lib.utexas.edu/maps/ams/corsica/"
+    },
+    {
+      title: "France 1:50k (1943)",
+      url: "https://maps.lib.utexas.edu/maps/ams/france_50k/",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/205803?v=uv#?xywh=-201%2C-89%2C2501%2C2032&cv="
+    },
+    {
+      title: "France 1:50k (1943)",
+      url: "https://digicoll.lib.berkeley.edu/record/112502?ln=en&v=uv#?xywh=-174%2C0%2C9209%2C6237&cv=",
+      indexUrl: "https://digicoll.lib.berkeley.edu/record/104702?ln=en&v=uv#?xywh=-367%2C-680%2C13408%2C7612"
+    },
+    {
+      title: "Normandy 1:50k Map Sheets (1943)",
+      url: "https://www.normandywarguide.com/articles/gsgs-4250-map-series",
       notes: [
-        { body: "Unfortunately, the index of this collection doesn't seem to be available, however, you may be able to piece it together using the index found in the 1:25k section. Please read the 1:25k notes beforehand. You essentially just need to match up the map codes when using the 1:25k index to locate them." },
-        { body: "It should also be noted that included in the 1:10k category are many 1:100k maps. This seems to be a mistake of some sort so be careful when choosing a map. Read the scale before getting too excited." }
+        {
+          heading: "USNA Sheets",
+          body: 'These sheets can be downloaded easily by clicking the "Download" button in the corner when accessing the sheets.'
+        },
+        {
+          heading: "NWG Sheets",
+          body: "These sheets cannot be downloaded and must be stitched together via taking several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
+        },
+        {
+          heading: "CGNL",
+          body: "These sheets cannot be downloaded or feasibly stitched. The owners suggest contacting them in order to download.",
+          email: "info@collectiegelderland.nl"
+        }
       ]
     },
     {
-      title: "German Empire 1:25k (1900s-1940s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-125000-des-deutschen-reichs",
-      notes: [
-        { body: "It should be noted that many of the maps in this collection originate from the 1880s-1910s. Despite them being republished in the following decades, the data is likely quite similar to the originals." }
-      ]
+      title: "North-East France 1:50k (1943)",
+      url: "https://maps.lib.utexas.edu/maps/ams/france_and_belgium/"
     },
     {
-      title: "Germany 1:25k (1952)",
-      url: "https://digicoll.lib.berkeley.edu/record/112517?ln=en&v=uv#?xywh=1825%2C2444%2C2341%2C1902&cv=2279",
-      indexUrl: "https://www.loc.gov/resource/g6080m.gct00113b/?sp=1&st=image&r=-0.266,0.033,1.459,0.878,0"
+      title: "France 1:50k (1950)",
+      url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-50-HISTO",
+      tutorial: {
+        intro: 'Scroll down until you see "Resources and Links"',
+        steps: [
+          { caption: "", src: "France/images/step1.png" },
+          { caption: "", src: "France/images/step2.png" },
+          { caption: "", src: "" }
+        ]
+      }
     },
     {
-      title: "Germany 1:25k (1952) -- Alternative Database",
-      url: "https://contentdm.lib.byu.edu/digital/collection/GermanyMaps/search"
-    },
-    {
-      title: "East Germany 1:25k (1970-80s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-125000-der-ddr",
-      notes: [
-        { body: "It would seem that the indexes included at the bottom don't match the format of the maps in the catalog list. However, the indexes themselves are clickable, meaning you can find maps you need fairly easily." },
-        { body: "It would seem that the first twelve or so maps have been removed in the series' catalog list." }
-      ]
-    },
-    {
-      title: "East Germany 1:50k (1980s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung",
-      notes: [
-        { body: "Unfortunately, the index of this collection doesn't seem to be available, however, you may be able to piece it together using the index found in the 1:25k section. Please read the 1:25k notes beforehand. You essentially just need to match up the map codes when using the 1:25k index to locate them." },
-        { body: "Also, for some reason, the 1:50k GDR maps don't have their own page, so I have to just show you the main page and you find it from there." }
-      ]
-    },
-    {
-      title: "German Empire 1:100k (1900s)",
-      url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~216867~90040001:Composite--Sheets-1---674--Germany-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
-      indexUrl: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~277615~90050631:Index-Map--Sheets-1---674?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
-      notes: [
-        { body: "I have included the composite image and an index. To find specific sheets, just search their name and number on the David Rumsey site." }
-      ]
-    },
-    {
-      title: "German Empire Maps (Includes Composite 1:100k Map of the German Empire) (1900s)",
-      url: "https://kartenforum.slub-dresden.de/"
-    },
-    {
-      title: "East Germany 1:100k (1970s-80s)",
-      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung",
-      notes: [
-        { body: "Unfortunately, the index of this collection doesn't seem to be available, however, you may be able to piece it together using the index found in the 1:25k section. Please read the 1:25k notes beforehand. You essentially just need to match up the map codes when using the 1:25k index to locate them." },
-        { body: "Also, for some reason, the 1:100k GDR maps don't have their own page, so I have to just show you the main page and you find it from there." }
-      ]
+      title: "France 1:100k (1943)",
+      url: "https://maps.lib.utexas.edu/maps/ams/france_100k/"
     }
   ]
 };
