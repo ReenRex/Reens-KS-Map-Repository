@@ -58,8 +58,18 @@ data.Europe.Germany = {
          { body: "Also, for some reason, the 1:50k GDR maps don't have their own page, so I have to just show you the main page and you find it from there." },
            ]
      },
+     { 
+        title: "Map of the German Empire (1900s)",
+        url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~216867~90040001:Composite--Sheets-1---674--Germany-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
+        indexUrl: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~277615~90050631:Index-Map--Sheets-1---674?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
+              notes: [
+                 { body: "I have included the composite image and an index. To find specific sheets, just search their name and number on the David Rumsey site."}
+                 ]
+
+     }
+     
     {
-        title: "German Empire Maps (Includes 1:100k Map of the German Empire) (1900s)",
+        title: "German Empire Maps (Includes Composite 1:100k Map of the German Empire) (1900s)",
            url: "https://kartenforum.slub-dresden.de/",
      },
      {
