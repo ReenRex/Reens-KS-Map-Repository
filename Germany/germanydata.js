@@ -48,7 +48,7 @@ data.Europe.Germany = {
 
       {
       title: "East Germany 1:25k (1970-80s)",
-      url: "https://ifl.wissensbank.com/esearcha/browse.tt.html",
+      url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-125000-der-ddr",
        },
 
      {
