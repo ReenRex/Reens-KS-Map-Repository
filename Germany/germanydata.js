@@ -49,9 +49,7 @@ data.Europe.Germany = {
    { body: "It would seem that the indexes included at the bottom don't match the format of the maps in the catalog list. However, the indexes themselves are clickable, meaning you can find maps you need fairly easily."},
    { body: "It would seem that the first twelve or so maps have been removed in the series' catalog list."},
     ]
-         
-       },
-
+      },
      {
         title: "East Germany 1:50k (1980s)",
         url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung",
