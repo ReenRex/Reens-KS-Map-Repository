@@ -6,7 +6,16 @@
 data.Europe = data.Europe || {};
 data.Europe.Germany = {
   "18th Century": [],
-  "19th Century": [],
+  "19th Century": [
+     {
+        title: "Bavaria 1:25k (1880s-1940s)",
+        url: "https://ifl.wissensbank.com/esearcha/browse.tt.html",
+         notes: [
+           { body: "Unfortunately, I could not find an index for these sheets, so you will have to do your best to piece these together if you wish to use them. I will, however, continue the search for it." },
+           ]
+     },
+     
+  ],
   "20th Century": [
     {
       title: "East Germany 1:10k (1970-80s)",
