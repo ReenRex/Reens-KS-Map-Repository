@@ -61,7 +61,7 @@ data.Europe.Germany = {
     {
         title: "German Empire Maps (Includes 1:100k Map of the German Empire) (1900s)",
            url: "https://kartenforum.slub-dresden.de/",
-     }
+     },
 
      
      {
