@@ -59,7 +59,7 @@ data.Europe.Germany = {
            ]
      },
      { 
-        title: "Map of the German Empire (1900s)",
+        title: "Map of the German Empire 1:100k (1900s)",
         url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~216867~90040001:Composite--Sheets-1---674--Germany-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
         indexUrl: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~277615~90050631:Index-Map--Sheets-1---674?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No",
               notes: [
