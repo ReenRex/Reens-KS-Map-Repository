@@ -11,6 +11,11 @@ data.Europe.Germany = {
         title: "Bavaria 1:25k (1880s-1940s)",
         url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-bayern-125-000",
      },
+
+     {
+         title: "Bavaria 1:100k (1801-06)",
+         url: "https://www.digitale-sammlungen.de/en/view/bsb00010747?page=,1",   
+     }
      
   ],
   "20th Century": [
