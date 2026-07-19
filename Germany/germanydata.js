@@ -13,6 +13,14 @@ data.Europe.Germany = {
      },
 
      {
+        title: "Bavaria 1:50k (1812-1867)",
+        url: "https://www.bavarikon.de/search?collectionid=bav:BSB-CMS-0000000000002414&lang=de",
+        notes [
+     { body: "Unfortunately, I cannot see an obvious way to download these sheets, meaning they must be stitched via several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."},
+     ]
+     },
+
+     {
          title: "Bavaria 1:100k (1801-06)",
          url: "https://www.digitale-sammlungen.de/en/view/bsb00010747?page=,1",   
      }
