@@ -31,10 +31,22 @@
 data.Europe = data.Europe || {};
 data.Europe.France = {
   "18th Century": [],
-  "19th Century": [],
+  "19th Century": [
+    {
+      title: "France 1:40k (1820s-80s)",
+      url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-EM-40K",
+      tutorial: {
+        intro: 'Scroll down until you see "Resources and Links"',
+        steps: [
+          { caption: "", src: "France/images/step1-40k.png" },
+          { caption: "", src: "France/images/step2-40k.png" }
+        ]
+      }
+    }
+  ],
   "20th Century": [
     {
-      title: "Normandy 1:25k Map Sheets (1943)",
+      title: "Normandy 1:25k (1943)",
       url: "https://cdm16630.contentdm.oclc.org/digital/collection/p16630coll8/search/searchterm/France%201%3A25%2C000",
       notes: "These sheets cannot be downloaded and must be stitched together via taking several screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be."
     },
@@ -53,7 +65,7 @@ data.Europe.France = {
       indexUrl: "https://digicoll.lib.berkeley.edu/record/104702?ln=en&v=uv#?xywh=-367%2C-680%2C13408%2C7612"
     },
     {
-      title: "Normandy 1:50k Map Sheets (1943)",
+      title: "Normandy 1:50k (1943)",
       url: "https://www.normandywarguide.com/articles/gsgs-4250-map-series",
       notes: [
         {
