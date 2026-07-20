@@ -1,5 +1,5 @@
 /* ============================================================
-   BELGIUM — edit this file to add or change Italy's maps.
+   BELGIUM — edit this file to add or change Belgium's maps.
    See France/francedata.js for full instructions on adding
    tutorials and notes to an entry.
    ============================================================ */
