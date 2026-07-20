@@ -42,7 +42,11 @@ data.Europe.Germany = {
       title: "German Empire 1:25k (1900s-1940s)",
       url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-125000-des-deutschen-reichs",
       notes: [
-        { body: "It should be noted that many of the maps in this collection originate from the 1880s-1910s. Despite them being republished in the following decades, the data is likely quite similar to the originals." }
+        { body: "It should be noted that many of the maps in this collection originate from the 1880s-1910s. Despite them being republished in the following decades, the data is likely quite similar to the originals." },
+        {
+          body: "These images are borderline usable. Below I have attached a screenshot of their use in TableTop Sim with some Ottovski WW2 pieces for reference.",
+          image: "Germany/images/GermanEmpire1-25ktest.png"
+        }
       ]
     },
     {
