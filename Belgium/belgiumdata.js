@@ -5,7 +5,14 @@
    ============================================================ */
 data.Europe = data.Europe || {};
 data.Europe.Belgium = {
-  "18th Century": [],
+  "18th Century": [
+     {
+        title: "Ferraris Map of Belgium (1777)",
+        url: "https://commons.wikimedia.org/wiki/Category:Full_size_Ferraris_maps_of_Belgium",
+     },
+
+     
+  ],
   "19th Century": [],
   "20th Century": [
 
