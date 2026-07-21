@@ -31,6 +31,10 @@ data.Europe.Belgium = {
         title: "Belgium 1:100k (1949)",
         url: "https://maps.lib.utexas.edu/maps/ams/belgium_100k/",
      },
+     {
+        title: "Belgium 1:100k (1908-22)",
+        url: "https://kramerius.cuni.cz/uk/view/uuid:b9a59d8c-7ea5-11ec-954a-fa163e4ea95f?page=uuid:bed1cf92-7ea5-11ec-954a-fa163e4ea95f",
+     },
      
         ]
 };
