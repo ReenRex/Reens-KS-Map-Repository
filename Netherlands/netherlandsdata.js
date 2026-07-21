@@ -9,7 +9,7 @@ data.Europe.Netherlands = {
   "19th Century": [
     {
       title: "Netherlands 1:50k (1843)",
-      url: "https://objects.library.uu.nl/reader/20.500.14918-352164?lan=en&page=1"
+      url: "https://objects.library.uu.nl/reader/20.500.14918-352164?lan=en&page=1",
     }
   ],
   "20th Century": []
