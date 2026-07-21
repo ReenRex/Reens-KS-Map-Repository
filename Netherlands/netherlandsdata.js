@@ -25,7 +25,7 @@ data.Europe.Netherlands = {
      },
 
      {
-        title: "Eastern Netherlands 1:25k",
+        title: "Eastern Netherlands 1:25k (1943-44)",
         url: "https://www.loc.gov/resource/g6000m.gct00041/?st=gallery",
      },
         
