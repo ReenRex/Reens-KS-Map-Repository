@@ -8,7 +8,7 @@ data.Europe.Italy = {
   "18th Century": [],
   "19th Century": [
      {
-        title: "Lombardy 1:86.4k (1833)",
+        title: "Lombardy & Veneto 1:86.4k (1833)",
         url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358973~90125900:Composite--A--2---H--4-Carta-Topogr?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&mi=4&trs=45&qvq=q:Topographische%20Karte%20des%20Lombardisch-Venetianischen%20Konigreichs;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1",
         notes: [
            {
