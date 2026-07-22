@@ -42,7 +42,18 @@ data.Europe.France = {
           { caption: "", src: "France/images/step2-40k.png" }
         ]
       }
-    }
+    },
+     {
+        title: "France 1:50k (1837-40)",
+        url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~362638~90129306:Carte-D-Assemblage-Des-Feuilles-De-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&mi=1&trs=348&qvq=q:Carte%20Topographique%20De%20La%20France%20de%20l%27Etat-Major%2C%20Levee%20et%20Publiee%20Par%20Ordre%20Du%20Roi.;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1",
+        notes: 
+           [
+              {
+                 body: "I have only linked to the index sheet. To find the sheets, search the David Rumsey website."
+              }
+              ]
+     },
+           
   ],
   "20th Century": [
     {
