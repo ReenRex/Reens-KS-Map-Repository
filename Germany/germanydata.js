@@ -26,7 +26,7 @@ data.Europe.Germany = {
     },
   {
       title: "Swabia 1:86.4k (1798-1828)",
-      url: "https://commons.wikimedia.org/wiki/Category:Charte_von_Schwaben_(Bohnenberger)",
+      url: "https://opendigi.ub.uni-tuebingen.de/opendigi/FhXIV1a_qt#p=1",
       indexUrl: "Germany/indexes/Swabia-1798-1828-Index.html",
      notes: [ { body: "Unfortunately, I cannot see an obvious way to download these sheets, meaning they must be stitched via several zoomed-in screenshots. Although this sounds like a lengthy process, it can take around 10-20 screenshots over 25-50 minutes to capture the land on a sheet. This also depends on how zoomed in (how high quality) you wish for your screenshots to be." }
       ]
