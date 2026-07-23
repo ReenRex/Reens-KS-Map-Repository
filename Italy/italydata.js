@@ -12,9 +12,9 @@ data.Europe.Italy = {
         url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358973~90125900:Composite--A--2---H--4-Carta-Topogr?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&mi=4&trs=45&qvq=q:Topographische%20Karte%20des%20Lombardisch-Venetianischen%20Konigreichs;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1",
         notes: [
            {
-              body: "I have linked a composite map that contains the index. To find the sheets, search the David Rumsey website.", }
+              body: "I have linked a composite map that contains the index. To find the sheets, search the David Rumsey website.", },
            { body: "The index itself is split across each side of the composite map.",
-           }
+           },
            ]
      },
   ],
