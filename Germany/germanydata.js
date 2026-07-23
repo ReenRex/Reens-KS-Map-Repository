@@ -10,7 +10,6 @@ data.Europe.Germany = {
      {
         title: "Swabia 1:86.4k (1799-1828)",
         url: "https://commons.wikimedia.org/wiki/Category:Charte_von_Schwaben_(Bohnenberger)?uselang=de",
-        indexUrl: "map-key.html",
      },
      
     {
