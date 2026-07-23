@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map Key</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  body{
+    font-family: "Times New Roman", Times, serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #000;
+    background: #fff;
+    line-height: 1.5;
+  }
+  h1{
+    font-size: 26px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  p.intro{
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  #map{
+    height: 600px;
+    width: 100%;
+    border: 1px solid #000;
+  }
+  .leaflet-popup-content{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+  }
+  .leaflet-popup-content a{
+    color: #0000EE;
+  }
+</style>
+</head>
+<body>
+
+<h1>Charte von Schwaben — Map Key</h1>
+<p class="intro">Bohnenberger's 1798&ndash;1828 survey of Swabia, 1:86,400. Each square marks the approximate area covered by one sheet &mdash; click a square to see which sheet it is and open it on Wikimedia Commons.</p>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  /* ============================================================
+     EDIT THIS LIST to add, remove, or move sheet squares.
+
+     Each sheet needs:
+       title  — shown in the popup
+       url    — where the square links to
+       bounds — the corners of the square, as
+                [[southLat, westLng], [northLat, eastLng]]
+
+     HOW TO FIND COORDINATES FOR A REAL SHEET:
+     1. Go to google.com/maps
+     2. Right-click the sheet's south-west corner on the map,
+        click the coordinates that pop up to copy them (lat, lng)
+     3. Do the same for the north-east corner
+     4. Paste both into a sheet's "bounds" below
+
+     The starting point (map center + zoom) is set further down
+     in the script, under "INITIAL MAP VIEW".
+     ============================================================ */
+  const sheets = [
+    { title: "Sheet 1 — Weißenburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_01_Weißenburg.jpg", bounds: [[48.8786, 10.7616], [49.188, 11.1718]] },
+    { title: "Sheet 2 — Rastatt", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_02_Rastatt.jpg", bounds: [[48.7042, 8.0038], [49.0136, 8.4124]] },
+    { title: "Sheet 3 — Karlsruhe", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_03_Karlsruhe.jpg", bounds: [[48.8522, 8.1987], [49.1616, 8.6087]] },
+    { title: "Sheet 4 — Ludwigsburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_04_Ludwigsburg.jpg", bounds: [[48.7428, 8.9873], [49.0522, 9.3963]] },
+    { title: "Sheet 5 — Heilbronn", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_05_Heilbronn.jpg", bounds: [[48.988, 9.0054], [49.2974, 9.4164]] },
+    { title: "Sheet 6 — Hall", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_06_Hall.jpg", bounds: [[48.9555, 9.5338], [49.2649, 9.9446]] },
+    { title: "Sheet 7 — Ellwangen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_07_Ellwangen.jpg", bounds: [[48.8065, 9.9241], [49.1159, 10.3337]] },
+    { title: "Sheet 8 — Nördlingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_08_Nördlingen.jpg", bounds: [[48.6964, 10.2847], [49.0058, 10.6933]] },
+    { title: "Sheet 9 — Pappenheim", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_09_Pappenheim.jpg", bounds: [[48.7943, 10.7753], [49.1037, 11.1847]] },
+    { title: "Sheet 10 — Strassburg (approximate — place name ambiguous, double-check)", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_10_Strassburg.jpg", bounds: [[47.9953, 7.5885], [48.3047, 7.9915]] },
+    { title: "Sheet 11 — Baden", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_11_Baden.jpg", bounds: [[48.6059, 8.0361], [48.9153, 8.4439]] },
+    { title: "Sheet 12 — Calw", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_12_Calw.jpg", bounds: [[48.5619, 8.5323], [48.8713, 8.9399]] },
+    { title: "Sheet 13 — Stuttgart", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_13_Stuttgart.jpg", bounds: [[48.6211, 8.9789], [48.9305, 9.3869]] },
+    { title: "Sheet 14 — Kirchheim", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_14_Kirchheim.jpg", bounds: [[48.492, 9.2487], [48.8014, 9.6557]] },
+    { title: "Sheet 15 — Göppingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_15_Göppingen.jpg", bounds: [[48.5495, 9.4483], [48.8589, 9.8557]] },
+    { title: "Sheet 16 — Heidenheim", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_16_Heidenheim.jpg", bounds: [[48.5216, 9.949], [48.831, 10.3562]] },
+    { title: "Sheet 17 — Dillingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_17_Dillingen.jpg", bounds: [[48.4159, 10.2854], [48.7253, 10.6918]] },
+    { title: "Sheet 18 — Rain", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_18_Rain.jpg", bounds: [[48.5428, 10.7243], [48.8522, 11.1317]] },
+    { title: "Sheet 19 — Offenburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_19_Offenburg.jpg", bounds: [[48.3161, 7.7381], [48.6255, 8.1437]] },
+    { title: "Sheet 20 — Kniebis und Kinzig (approximate — named after a region, not a single town)", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_20_Kniebis_und_Kinzig.jpg", bounds: [[48.312, 8.1639], [48.6214, 8.5695]] },
+    { title: "Sheet 21 — Freudenstadt", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_21_Freudenstadt.jpg", bounds: [[48.3097, 8.2114], [48.6191, 8.617]] },
+    { title: "Sheet 22 — Tübingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_22_Tübingen.jpg", bounds: [[48.3669, 8.8546], [48.6763, 9.2606]] },
+    { title: "Sheet 23 — Urach", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_23_Urach.jpg", bounds: [[48.3367, 9.1957], [48.6461, 9.6015]] },
+    { title: "Sheet 24 — Ulm", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_24_Ulm.jpg", bounds: [[48.2464, 9.7851], [48.5558, 10.1901]] },
+    { title: "Sheet 25 — Günzburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_25_Günzburg.jpg", bounds: [[48.2975, 10.0748], [48.6069, 10.4802]] },
+    { title: "Sheet 26 — Burgau", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_26_Burgau.jpg", bounds: [[48.2786, 10.1974], [48.588, 10.6026]] },
+    { title: "Sheet 27 — Augsburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_27_Augsburg.jpg", bounds: [[48.2158, 10.6954], [48.5252, 11.1002]] },
+    { title: "Sheet 28 — Freiburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_28_Freiburg.jpg", bounds: [[47.8443, 7.6412], [48.1537, 8.043]] },
+    { title: "Sheet 30 — Rottweil", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_30_Rottweil.jpg", bounds: [[48.0136, 8.4231], [48.323, 8.8263]] },
+    { title: "Sheet 31 — Tuttlingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_31_Tuttlingen.jpg", bounds: [[47.8289, 8.6219], [48.1383, 9.0237]] },
+    { title: "Sheet 33 — Biberach", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_33_Biberach.jpg", bounds: [[47.9425, 9.5884], [48.2519, 9.991]] },
+    { title: "Sheet 34 — Memmingen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_34_Memmingen.jpg", bounds: [[47.8286, 9.9824], [48.138, 10.3842]] },
+    { title: "Sheet 35 — Mindelheim", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_35_Mindelheim.jpg", bounds: [[47.8886, 10.2889], [48.198, 10.6911]] },
+    { title: "Sheet 36 — Landsberg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_36_Landsberg.jpg", bounds: [[47.8939, 10.6803], [48.2033, 11.0825]] },
+    { title: "Sheet 37 — Wiese (approximate — named after a river/valley, not a town)", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_37_Wiese.jpg", bounds: [[47.4753, 7.4905], [47.7847, 7.8895]] },
+    { title: "Sheet 38 — Wutach (approximate — named after a river gorge, not a town)", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_38_Wutach.jpg", bounds: [[47.6953, 8.1497], [48.0047, 8.5503]] },
+    { title: "Sheet 42 — Ravensburg", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_42_Ravensburg.jpg", bounds: [[47.627, 9.4116], [47.9364, 9.8118]] },
+    { title: "Sheet 43 — Leutkirch", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_43_Leutkirch.jpg", bounds: [[47.6739, 9.8222], [47.9833, 10.2228]] },
+    { title: "Sheet 44 — Kaufbeuren", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_44_Kaufbeuren.jpg", bounds: [[47.7256, 10.4173], [48.035, 10.8183]] },
+    { title: "Sheet 45 — Schongau", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_45_Schongau.jpg", bounds: [[47.6597, 10.7004], [47.9691, 11.1008]] },
+    { title: "Sheet 51 — Bregenz", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_51_Bregenz.jpg", bounds: [[47.3484, 9.5481], [47.6578, 9.9461]] },
+    { title: "Sheet 52 — Immenstadt", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_52_Immenstadt.jpg", bounds: [[47.4042, 10.0166], [47.7136, 10.415]] },
+    { title: "Sheet 53 — Füssen", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_53_Füssen.jpg", bounds: [[47.4175, 10.5021], [47.7269, 10.9007]] },
+    { title: "Sheet 59 — Sentis (approximate — named after the Säntis mountain, not a town)", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_59_Sentis.jpg", bounds: [[47.0947, 9.1388], [47.4041, 9.535]] },
+    { title: "Sheet 60 — Bludenz", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_60_Bludenz.jpg", bounds: [[47.0031, 9.6242], [47.3125, 10.0196]] },
+    { title: "Sheet 61 — Lech", url: "https://commons.wikimedia.org/wiki/File:Charte_von_Schwaben_Tafel_61_Lech.jpg", bounds: [[47.0534, 9.9449], [47.3628, 10.3407]] }
+  ];
+  /* ============================================================ */
+
+  // ---- INITIAL MAP VIEW ----
+  // [latitude, longitude], zoom level (higher = closer in)
+  const map = L.map('map').setView([48.4, 9.6], 8);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  sheets.forEach(sheet => {
+    const rect = L.rectangle(sheet.bounds, {
+      color: '#9c4a2e',
+      weight: 2,
+      fillOpacity: 0.15
+    }).addTo(map);
+
+    rect.bindPopup(
+      `<strong>${sheet.title}</strong><br><a href="${sheet.url}" target="_blank" rel="noopener noreferrer">View sheet →</a>`
+    );
+
+    rect.on('mouseover', () => rect.setStyle({ fillOpacity: 0.35 }));
+    rect.on('mouseout', () => rect.setStyle({ fillOpacity: 0.15 }));
+  });
+</script>
+
+</body>
+</html>
