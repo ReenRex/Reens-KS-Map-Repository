@@ -7,11 +7,6 @@ data.Europe = data.Europe || {};
 data.Europe.Germany = {
   "18th Century": [],
   "19th Century": [
-     {
-        title: "Swabia 1:86.4k (1799-1828)",
-        url: "https://commons.wikimedia.org/wiki/Category:Charte_von_Schwaben_(Bohnenberger)?uselang=de",
-     },
-     
     {
       title: "Bavaria 1:25k (1880s-1940s)",
       url: "https://leibniz-ifl.de/forschung/infrastrukturen/bibliothek/kartensammlung/tk-bayern-125-000",
