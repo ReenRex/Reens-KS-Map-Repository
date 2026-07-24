@@ -9,7 +9,7 @@ data.Europe.Germany = {
      {
         title: "Saxony 1:32k (1762)",
         url: "https://de.wikipedia.org/wiki/Accurate_Situations-Carte_von_einem_Theile_des_Churf%C3%BCrstenthums_Sachsen#",
-        indexUrl: "Accurate-Situation-Saxony.html",
+        indexUrl: "Saxony-dresden-index.html",
      },
      
   ],
