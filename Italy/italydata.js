@@ -14,11 +14,15 @@ data.Europe.Italy = {
         { body: "I have linked a composite map that contains the index. To find the sheets, search the David Rumsey website." },
         { body: "The index itself is split across each side of the composite map." }
       ]
-    },
+   },
+     {
+        title: "Florence and its surroundings 1:50k (1850)",
+        url: "https://kramerius.cuni.cz/uk/view/uuid:eec4e840-62b4-11ec-8cb0-fa163e4ea95f?page=uuid:f04723e0-62b4-11ec-8cb0-fa163e4ea95f",
+     },
      {
         title: "Sardinia Mainland 1:50k (1852-67)",
         url: "https://drive.google.com/drive/folders/1gueizG44sX2ZaD3rfmH737wWyZ53Wjke",
-     }
+     },
   ],
   "20th Century": [
     {
