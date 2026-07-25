@@ -7,14 +7,6 @@ data.Europe = data.Europe || {};
 data.Europe.Italy = {
   "18th Century": [],
   "19th Century": [
-    {
-      title: "Lombardy & Veneto 1:86.4k (1833)",
-      url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358973~90125900:Composite--A--2---H--4-Carta-Topogr?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&mi=4&trs=45&qvq=q:Topographische%20Karte%20des%20Lombardisch-Venetianischen%20Konigreichs;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1",
-      notes: [
-        { body: "I have linked a composite map that contains the index. To find the sheets, search the David Rumsey website." },
-        { body: "The index itself is split across each side of the composite map." }
-      ]
-   },
      {
         title: "Florence and its surroundings 1:50k (1850)",
         url: "https://kramerius.cuni.cz/uk/view/uuid:eec4e840-62b4-11ec-8cb0-fa163e4ea95f?page=uuid:f04723e0-62b4-11ec-8cb0-fa163e4ea95f",
@@ -23,6 +15,17 @@ data.Europe.Italy = {
         title: "Sardinia Mainland 1:50k (1852-67)",
         url: "https://drive.google.com/drive/folders/1gueizG44sX2ZaD3rfmH737wWyZ53Wjke",
      },
+    {
+      title: "Lombardy & Veneto 1:86.4k (1833)",
+      url: "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358973~90125900:Composite--A--2---H--4-Carta-Topogr?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&mi=4&trs=45&qvq=q:Topographische%20Karte%20des%20Lombardisch-Venetianischen%20Konigreichs;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1",
+      notes: [
+        { body: "I have linked a composite map that contains the index. To find the sheets, search the David Rumsey website." },
+        { body: "The index itself is split across each side of the composite map." }
+      ]
+   },
+     
+
+     
   ],
   "20th Century": [
     {
