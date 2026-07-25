@@ -9,7 +9,6 @@ data.Europe.Germany = {
      {
         title: "Saxony 1:32k (1762)",
         url: "https://de.wikipedia.org/wiki/Accurate_Situations-Carte_von_einem_Theile_des_Churf%C3%BCrstenthums_Sachsen#",
-        indexUrl: "https://reenrex.github.io/Reens-KS-Map-Repository/Germany/indexes/Saxony-Dresden-Index.html",
      },
   ],
   "19th Century": [
