@@ -68,7 +68,7 @@
      The starting point (map center + zoom) is set further down
      in the script, under "INITIAL MAP VIEW".
      ============================================================ */
- const sheets = [
+  const sheets = [
     { title: "Sheet 1 — Weißenburg", url: "https://opendigi.ub.uni-tuebingen.de/opendigi/FhXIV1a_qt#p=2", bounds: [[48.8585, 7.5528], [49.1719, 7.96]] },
     { title: "Sheet 2 — Rastatt", url: "https://opendigi.ub.uni-tuebingen.de/opendigi/FhXIV1a_qt#p=3", bounds: [[48.8585, 7.96], [49.1719, 8.3672]] },
     { title: "Sheet 3 — Karlsruhe", url: "https://opendigi.ub.uni-tuebingen.de/opendigi/FhXIV1a_qt#p=4", bounds: [[48.8585, 8.3672], [49.1719, 8.7744]] },
@@ -126,7 +126,7 @@
 
   // ---- INITIAL MAP VIEW ----
   // [latitude, longitude], zoom level (higher = closer in)
-  const map = L.map('map').setView([48.4, 9.6], 8);
+  const map = L.map('map').setView([48.3, 9.3], 8);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
