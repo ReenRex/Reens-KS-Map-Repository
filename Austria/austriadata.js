@@ -19,7 +19,7 @@ data.Europe.Austria = {
   "19th Century": [
     {
       title: "Austria-Hungary 1:75k (1876-1915)",
-      url: "https://digitalcollections.nypl.org/collections/1fa2d5b0-c5ef-012f-fa0d-58d385a7bc34",
+      url: "https://kramerius.cuni.cz/uk/search?q=K.%20u.%20k.%20Milit%C3%A4rgeographisches%20Institut",
       indexUrl: "https://www.loc.gov/resource/g6481a.ct011968/?r=0.449,0.185,0.542,0.326,0"
     },
     {
@@ -27,7 +27,7 @@ data.Europe.Austria = {
       url: "https://semanchuk.com/gen/maps/spezialkartor/LiskoUndMezoLaborc.png"
     },
     {
-      title: "Austria-Hungary 1:75k (1876-1915)",
+      title: "Austria-Hungary 1:75k (1876-1915) -- ADDITIONAL SOURCE",
       url: "https://dbs.herder-institut.de/maps/list/id/176649263?p=1",
       tutorial: {
         intro: "This database requires maps to be requested via email. You can fill in the form as seen in the instruction below.",
@@ -37,7 +37,11 @@ data.Europe.Austria = {
           { caption: "Fill out the request form with your details and submit. Depending on scan availability, you can get roughly 10-20 scans free of charge per quarter of the year.", src: "" }
         ]
       }
-    }
+    },
+     {
+      title: "Austria-Hungary 1:75k (1876-1915) -- ADDITIONAL SOURCE",
+      url: "https://digitalcollections.nypl.org/collections/1fa2d5b0-c5ef-012f-fa0d-58d385a7bc34",
+     },
   ],
   "20th Century": [
     {
