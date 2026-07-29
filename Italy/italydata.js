@@ -8,8 +8,17 @@ data.Europe.Italy = {
   "18th Century": [],
   "19th Century": [
      {
+        title: "Papal States 1:50k (1841-3)",
+        url: "https://drive.google.com/drive/folders/1gkpkroiLIIXdpE6MkG41hvHl9gtAqWMt",
+     },
+     
+     {
         title: "Florence and its surroundings 1:50k (1850)",
         url: "https://kramerius.cuni.cz/uk/view/uuid:eec4e840-62b4-11ec-8cb0-fa163e4ea95f?page=uuid:f04723e0-62b4-11ec-8cb0-fa163e4ea95f",
+     },
+     {
+        title: "Ferrara 1:50k (c.1850s)",
+        url: "https://drive.google.com/drive/folders/1WnXyl_2n1yThMgVQOkBiaZO9TZnJk4FH",
      },
      {
         title: "Sardinia Mainland 1:50k (1852-67)",
