@@ -21,6 +21,10 @@ data.Europe.Italy = {
         url: "https://drive.google.com/drive/folders/1WnXyl_2n1yThMgVQOkBiaZO9TZnJk4FH",
      },
      {
+        title: "Lombardy 1:50k (c.1860s)",
+        url: "https://drive.google.com/drive/mobile/folders/1AmPejiiRd2KNeU1U73-xYyyNln1MBbbm",
+     },
+     {
         title: "Sardinia Mainland 1:50k (1852-67)",
         url: "https://drive.google.com/drive/folders/1gueizG44sX2ZaD3rfmH737wWyZ53Wjke",
      },
